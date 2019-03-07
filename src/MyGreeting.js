@@ -1,46 +1,9 @@
-import React, { PureComponent, createRef } from "react";
+import customElement from "./customElement";
 
-class MyGreeting extends PureComponent {
-  elementRef = createRef();
-
-  componentDidUpdate() {
-    this._renderWebComponentProps();
-  }
-
-  componentDidMount() {
-    this._renderWebComponentProps();
-    this._bindWebComponentEvents();
-  }
-
-  render() {
-    const greetingAttrs = {
-      salutation: this.props.salutation
-    };
-
-    return (
-      <my-greeting {...greetingAttrs} ref={this.elementRef}>
-        {this.props.children}
-      </my-greeting>
-    );
-  }
-
-  _renderWebComponentProps() {
-    const greetingProps = {
-      traits: this.props.traits
-    };
-
-    customElements.whenDefined(this.elementRef.current.localName).then(() => {
-      Object.assign(this.elementRef.current, greetingProps);
-    });
-  }
-
-  _bindWebComponentEvents() {
-    this.elementRef.current.addEventListener("wave", e => {
-      if (this.props.onWave) {
-        this.props.onWave(e.detail);
-      }
-    });
-  }
-}
+const MyGreeting = customElement("my-greeting", {
+  salutation: { type: "attribute", name: "salutation" },
+  traits: { type: "property", name: "traits" },
+  onWave: { type: "event", name: "wave" }
+});
 
 export default MyGreeting;
