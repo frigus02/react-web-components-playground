@@ -1,28 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import MyGreeting from "./MyGreeting";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [waved, setWaved] = useState(0);
+  const greetingProps = {
+    salutation: "Hia",
+    traits: ["very nice", "super smart"],
+    onWave: setWaved
+  };
+
+  return (
+    <div className="App">
+      <MyGreeting {...greetingProps}>Jan</MyGreeting>
+      <small>you waved {waved} times</small>
+    </div>
+  );
+};
 
 export default App;
