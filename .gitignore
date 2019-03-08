@@ -1,9 +1,9 @@
 /node_modules
-/playground-cra/node_modules
-/playground-cra/coverage
-/playground-cra/build
-/playground-nextjs/.next
-/playground-nextjs/node_modules
+/app-cra/node_modules
+/app-cra/coverage
+/app-cra/build
+/app-nextjs/.next
+/app-nextjs/node_modules
 .DS_Store
 npm-debug.log*
 yarn-debug.log*

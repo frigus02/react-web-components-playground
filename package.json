@@ -2,8 +2,8 @@
   "name": "playground",
   "private": true,
   "workspaces": [
-    "playground-cra",
-    "playground-nextjs",
+    "app-cra",
+    "app-nextjs",
     "shared-custom-element-wrapper",
     "shared-web-components"
   ]
