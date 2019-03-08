@@ -3,6 +3,8 @@
   "private": true,
   "workspaces": [
     "playground-cra",
-    "playground-nextjs"
+    "playground-nextjs",
+    "shared-custom-element-wrapper",
+    "shared-web-components"
   ]
 }

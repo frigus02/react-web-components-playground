@@ -2,6 +2,7 @@
 /playground-cra/node_modules
 /playground-cra/coverage
 /playground-cra/build
+/playground-nextjs/.next
 /playground-nextjs/node_modules
 .DS_Store
 npm-debug.log*
