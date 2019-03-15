@@ -19,7 +19,7 @@ tmpl.innerHTML = html`
   </style>
 
   <div>
-    <span id="salutation"></span> <span id="traits"></span>
+    <span id="salutation"></span> <span id="traits"></span> <slot></slot>
     <button id="wave">👋</button>
   </div>
 `;
@@ -29,14 +29,26 @@ class MyGreeting extends HTMLElement {
     return ["salutation"];
   }
 
-  constructor(...args) {
-    // https://github.com/WebReflection/document-register-element#upgrading-the-constructor-context
-    const self = super(...args);
-    self._salutation = "Hello";
-    self._traits = [];
-    self._waves = 0;
-    self._rendered = false;
-    return self;
+  constructor() {
+    super();
+    this._salutation = "Hello";
+    this._traits = [];
+    this._waves = 0;
+
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
+    this._salutationElement = this.shadowRoot.querySelector("#salutation");
+    this._traitsElement = this.shadowRoot.querySelector("#traits");
+    this._waveElement = this.shadowRoot.querySelector("#wave");
+    this._waveElement.addEventListener("click", () => {
+      this._waves++;
+      this.dispatchEvent(
+        new CustomEvent("wave", {
+          detail: this._waves
+        })
+      );
+    });
+    this._render();
   }
 
   get salutation() {
@@ -57,10 +69,6 @@ class MyGreeting extends HTMLElement {
     this._render();
   }
 
-  connectedCallback() {
-    this._render();
-  }
-
   attributeChangedCallback(attr, oldValue, newValue) {
     if (attr === "salutation") {
       this.salutation = newValue;
@@ -68,22 +76,6 @@ class MyGreeting extends HTMLElement {
   }
 
   _render() {
-    if (!this._rendered) {
-      this._rendered = true;
-      this.appendChild(tmpl.content.cloneNode(true));
-      this._salutationElement = this.querySelector("#salutation");
-      this._traitsElement = this.querySelector("#traits");
-      this._waveElement = this.querySelector("#wave");
-      this._waveElement.addEventListener("click", () => {
-        this._waves++;
-        this.dispatchEvent(
-          new CustomEvent("wave", {
-            detail: this._waves
-          })
-        );
-      });
-    }
-
     this._salutationElement.textContent = this._salutation;
     this._traitsElement.textContent = this._traits.join(", ");
   }

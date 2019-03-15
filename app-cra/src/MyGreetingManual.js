@@ -1,5 +1,5 @@
 import React, { PureComponent, createRef } from "react";
-import "shared-web-components/my-greeting";
+import "shared-web-components/my-greeting-shadow-dom";
 
 class MyGreeting extends PureComponent {
   elementRef = createRef();

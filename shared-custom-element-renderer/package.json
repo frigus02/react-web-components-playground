@@ -1,0 +1,11 @@
+{
+  "name": "shared-custom-element-renderer",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "document-register-element": "^1.13.1",
+    "jsdom": "^14.0.0",
+    "shared-web-components": "0.1.0"
+  }
+}

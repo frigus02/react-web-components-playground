@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <MyGreeting {...greetingProps}>people</MyGreeting>
+      <MyGreeting {...greetingProps}></MyGreeting>
       <small>you waved {waved} times</small>
     </div>
   );
