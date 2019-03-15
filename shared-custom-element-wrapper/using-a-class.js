@@ -73,7 +73,7 @@ const customElement = (name, props) => {
       for (const event of events) {
         this.elementRef.current.addEventListener(event.name, e => {
           if (event.reactProp in this.props) {
-            this.props[event.reactProp](e.detail);
+            this.props[event.reactProp](e);
           }
         });
       }

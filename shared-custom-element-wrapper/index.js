@@ -49,14 +49,17 @@ const customElement = (elementName, propsMapping) => {
     }, properties.map(p => props[p.reactProp]));
 
     useLayoutEffect(() => {
-      for (const event of events) {
-        elementRef.current.addEventListener(event.name, e => {
-          if (event.reactProp in props) {
-            props[event.reactProp](e.detail);
-          }
-        });
+      const elementEvents = filterProps(props, events);
+      for (const event in elementEvents) {
+        elementRef.current.addEventListener(event, elementEvents[event]);
       }
-    }, []);
+
+      return () => {
+        for (const event in elementEvents) {
+          elementRef.current.removeEventListener(event, elementEvents[event]);
+        }
+      };
+    }, events.map(e => props[e.reactProp]));
 
     const elementAttrs = filterProps(props, attributes);
     return (

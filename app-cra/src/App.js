@@ -7,7 +7,7 @@ const App = () => {
   const greetingProps = {
     salutation: "Hia",
     traits: ["very nice", "super smart"],
-    onWave: setWaved
+    onWave: e => setWaved(e.detail)
   };
 
   return (

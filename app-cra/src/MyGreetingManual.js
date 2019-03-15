@@ -38,7 +38,7 @@ class MyGreeting extends PureComponent {
   _bindWebComponentEvents() {
     this.elementRef.current.addEventListener("wave", e => {
       if (this.props.onWave) {
-        this.props.onWave(e.detail);
+        this.props.onWave(e);
       }
     });
   }
