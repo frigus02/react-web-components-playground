@@ -29,12 +29,14 @@ class MyGreeting extends HTMLElement {
     return ["salutation"];
   }
 
-  constructor() {
-    super();
-    this._salutation = "Hello";
-    this._traits = [];
-    this._waves = 0;
-    this._rendered = false;
+  constructor(...args) {
+    // https://github.com/WebReflection/document-register-element#upgrading-the-constructor-context
+    const self = super(...args);
+    self._salutation = "Hello";
+    self._traits = [];
+    self._waves = 0;
+    self._rendered = false;
+    return self;
   }
 
   get salutation() {

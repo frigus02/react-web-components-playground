@@ -14,7 +14,7 @@ async function render(elementName, attributes = {}, properties = {}) {
     dom,
     "document-register-element/build/document-register-element.js"
   );
-  await loadScript(dom, `shared-web-components/${elementName}.js`);
+  await loadScript(dom, `shared-web-components/${elementName}-renderable.js`);
 
   const element = dom.window.document.querySelector(elementName);
 
@@ -28,7 +28,7 @@ async function render(elementName, attributes = {}, properties = {}) {
 
   await delay();
 
-  console.log(element.outerHTML);
+  return element.outerHTML;
 }
 
 async function loadScript(dom, lib) {
@@ -44,15 +44,4 @@ function delay(ms) {
   });
 }
 
-async function main() {
-  await render(
-    "my-greeting",
-    { salutation: "hi" },
-    { traits: ["super", "powerful"] }
-  );
-}
-
-main().catch(e => {
-  console.error(e);
-  process.exit(1);
-});
+module.exports = render;
