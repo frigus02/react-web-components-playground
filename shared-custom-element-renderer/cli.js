@@ -4,7 +4,7 @@ async function main() {
   const result = await render(
     "my-greeting",
     { salutation: "hi" },
-    { traits: ["super", "powerful"] }
+    { traits: ["super", "boring"] }
   );
   console.log(result);
 }

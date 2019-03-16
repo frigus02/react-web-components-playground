@@ -1,28 +1,5 @@
-const html = String.raw;
 const tmpl = document.createElement("template");
-tmpl.innerHTML = html`
-  <style>
-    #wave {
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      font-size: 16px;
-      transition: transform 0.1s ease;
-    }
-    #wave:hover {
-      transform: scale(3);
-    }
-    #wave:active {
-      transform: scale(2.9) rotate(10deg);
-    }
-  </style>
-
-  <div>
-    <span id="salutation"></span> <span id="traits"></span> <slot></slot>
-    <button id="wave">👋</button>
-  </div>
-`;
+tmpl.innerHTML = require("./my-greeting-template");
 
 class MyGreeting extends HTMLElement {
   static get observedAttributes() {

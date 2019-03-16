@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-import MyGreeting from "../DynamicMyGreeting";
+import MyGreeting from "../MyGreetingSSR";
 
 function Home() {
   const [waved, setWaved] = useState(0);
