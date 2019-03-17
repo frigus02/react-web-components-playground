@@ -8,12 +8,26 @@ Server side rendering?
 
 https://developers.google.com/web/fundamentals/web-components/best-practices
 
-Web Components
+What are Web Components?
+
+- Custom Elements
+- Shadow DOM
+- Template Element
+
+Web Components...
 
 - integrate nicely into dev tools (good for developers)
 - are native, so don't need a big library
 - that makes them easy to integrate into any frontend project
 - e.g. share stuff between your React, Elm, Angular projects
+
+Web Components are used
+
+- GitHub
+- [ING](https://dev.to/thepassle/ing--web-components-aef)
+- Chrome settings/about
+- YouTube uses v0 and now every browser needs polyfill 😞
+- https://github.com/Polymer/polymer/wiki/Who%27s-using-Polymer%3F
 
 ## Plot
 
@@ -21,9 +35,10 @@ Web Components
 
 React vs. Web Components ?
 
-- React and Web Components are different systems.
-- They don't work together.
-- It's either or.
+- WCs are hard to work with
+- WCs can't do what React does
+- React is a huge library
+- React needs tooling (babel)
 
 ### No, they are complementary and work together.
 
@@ -70,3 +85,11 @@ React ❤ Web Components !
 - https://github.com/frigus02/function-web-components
 - https://github.com/github/details-dialog-element
 - https://github.com/w3c/webcomponents/issues/716
+- https://github.com/web-padawan/aybolit
+
+https://twitter.com/vincentriemer/status/1022447091455598593
+https://medium.com/@bdc/web-components-the-react-way-8ed5b6f4f942
+https://vaadin.com/tutorials/using-web-components-in-react
+https://dev.to/ben/why-the-react-community-is-missing-the-point-about-web-components-1ic3
+
+https://dev.to/thepassle/web-components-from-zero-to-hero-4n4m
