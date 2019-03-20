@@ -2,6 +2,9 @@ const html = String.raw;
 const tmpl = document.createElement("template");
 tmpl.innerHTML = html`
   <style>
+    :host {
+      display: block;
+    }
     #wave {
       background: none;
       border: none;
@@ -18,10 +21,10 @@ tmpl.innerHTML = html`
     }
   </style>
 
-  <div>
-    <span id="salutation"></span> <span id="traits"></span> <slot></slot>
-    <button id="wave">👋</button>
-  </div>
+  <span id="salutation"></span>
+  <span id="traits"></span>
+  <slot></slot>
+  <button id="wave">👋</button>
 `;
 
 class MyGreeting extends HTMLElement {

@@ -31,13 +31,13 @@ Web Components are used
 
 ## Plot
 
-### Web Components?
+### Why?
 
-6min
+2min
 
 ### React vs. Web Components?
 
-4min
+2min
 
 - WCs are hard to work with
 - WCs can't do what React does
@@ -46,13 +46,25 @@ Web Components are used
 
 ### React 🤝 Web Components.
 
-8min
+2min
 
 > React and Web Components are built to solve different problems. Web Components provide strong encapsulation for reusable components, while React provides a declarative library that keeps the DOM in sync with your data. The two goals are complementary. As a developer, you are free to use React in your Web Components, or to use Web Components in React, or both.
 >
 > <cite>&mdash; https://reactjs.org/docs/web-components.html</cite>
 
 That said support for Custom Elements in React is a bit clunky. See [Custom Elements Everywhere](https://custom-elements-everywhere.com/#react) for a list of open issues.
+
+### Web Components
+
+6min
+
+DEMO web component only
+
+### React 🤝 Web Components.
+
+6min
+
+DEMO in react
 
 ### React ❤ Web Components!
 

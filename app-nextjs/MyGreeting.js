@@ -1,5 +1,5 @@
 import customElement from "shared-custom-element-wrapper";
-import "shared-web-components/my-greeting";
+import "shared-web-components/my-greeting-using-template";
 
 const MyGreeting = customElement("my-greeting", {
   salutation: { type: "attribute", name: "salutation" },
