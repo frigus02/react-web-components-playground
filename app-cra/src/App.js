@@ -5,7 +5,7 @@ import MyGreeting from "./MyGreeting";
 const App = () => {
   const [waved, setWaved] = useState(0);
   const greetingProps = {
-    salutation: "Hia",
+    salutation: "Hi",
     traits: ["very nice", "super smart"],
     onWave: e => setWaved(e.detail)
   };
