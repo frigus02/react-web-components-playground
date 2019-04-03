@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "react": "16.8.4",
+    "react-custom-element-wrapper": "0.0.3",
     "react-dom": "16.8.4",
     "react-scripts": "2.1.5",
-    "shared-custom-element-wrapper": "0.1.0",
     "shared-web-components": "0.1.0"
   },
   "scripts": {

@@ -1,4 +1,4 @@
-import customElement from "shared-custom-element-wrapper";
+import customElement from "react-custom-element-wrapper";
 import "shared-web-components/my-greeting";
 
 const MyGreeting = customElement("my-greeting", {

@@ -5,7 +5,6 @@
     "app-cra",
     "app-nextjs",
     "shared-custom-element-renderer",
-    "shared-custom-element-wrapper",
     "shared-web-components"
   ]
 }
